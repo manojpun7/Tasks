@@ -1,18 +1,13 @@
 import { useState } from "react";
-import ComponentA from "./components/ComponentA";
-import ComponentB from "./components/ComponentB";
 
-const HoverSwitcher = () => {
-  const [hovered, setHovered] = useState(false);
+import Task1 from "./tasks/Task1";
 
+const App = () => {
   return (
-    <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {hovered ? <ComponentB /> : <ComponentA />}
+    <div>
+      <Task1 />;
     </div>
   );
 };
 
-export default HoverSwitcher;
+export default App;

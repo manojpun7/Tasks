@@ -15,14 +15,14 @@ const ComponentA = () => {
     <div
       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
                  w-[1214px] h-[697px] opacity-100
-                 bg-white border border-gray-300
+                
                  overflow-hidden"
     >
       {/* New Div */}
       <div
         className="absolute top-[178px] left-[292px]
                    w-[630px] h-[341px] opacity-100
-                   bg-white border border-gray-300"
+                   "
       >
         {/* Images and GIFs positioned around the main content */}
         <img
@@ -80,7 +80,6 @@ const ComponentA = () => {
         <div
           className="flex flex-col items-center justify-center p-5
                      w-[399px] h-[131px] gap-[20px]
-                     border border-gray-400
                      absolute top-[114px] left-[120px]"
         >
           <p
@@ -104,9 +103,9 @@ const ComponentA = () => {
             <span className="emoji-container">🤝</span>
           </h2>
 
-          <p className="text-black hover:underline flex items-center font-sans font-bold">
-            View all Testimonials <span className="ml-1">→</span>
-          </p>
+          <a className="text-black flex items-center font-sans font-bold">
+            View all Testimonials <span className="ml-1 font-bold">→</span>
+          </a>
         </div>
       </div>
     </div>

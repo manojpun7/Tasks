@@ -1,11 +1,12 @@
-import React from 'react'
 
-const Task2 = () => {
+import SkillShikshyaFeatures from "../components/task2/SkillShikshyaFeatures.jsx";
+
+function App() {
   return (
-    <div>
-      hello world k xa halkhabar
-    </div>
-  )
+    <>
+      <SkillShikshyaFeatures/>
+    </>
+  );
 }
 
-export default Task2
+export default App;

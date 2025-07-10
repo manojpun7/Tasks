@@ -11,3 +11,16 @@
 .animate-smooth-up-down {
   animation: smooth-up-down 2s ease-in-out infinite; 
 }
+
+@keyframes task2-animation {
+  0%, 100% {
+    transform: translateY(0); 
+  }
+  50% {
+    transform: translateY(-5px); 
+  }
+}
+
+.animate-task2-animation {
+  animation: task2-animation 1s ease-in-out infinite; 
+}

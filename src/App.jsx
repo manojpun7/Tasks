@@ -7,6 +7,7 @@ const App = () => {
   return (
     <div>
       <Task2 />;
+      {/* <Task1 />; */}
     </div>
   );
 };

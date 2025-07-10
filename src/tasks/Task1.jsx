@@ -1,14 +1,14 @@
 import { useState } from "react";
-import user1 from "../assets/user1.png";
-import user2 from "../assets/user2.png";
-import user3 from "../assets/user3.png";
-import user4 from "../assets/user4.png";
-import user5 from "../assets/user5.png";
-import user6 from "../assets/user6.png";
-import emoji1 from "../assets/emoji1.gif";
-import emoji2 from "../assets/emoji2.gif";
-import emoji3 from "../assets/emoji3.gif";
-import emoji4 from "../assets/emoji4.gif";
+import user1 from "../assets/task1/user1.png";
+import user2 from "../assets/task1/user2.png";
+import user3 from "../assets/task1/user3.png";
+import user4 from "../assets/task1/user4.png";
+import user5 from "../assets/task1/user5.png";
+import user6 from "../assets/task1/user6.png";
+import emoji1 from "../assets/task1/emoji1.gif";
+import emoji2 from "../assets/task1/emoji2.gif";
+import emoji3 from "../assets/task1/emoji3.gif";
+import emoji4 from "../assets/task1/emoji4.gif";
 
 const Task1 = () => {
   const [hovered, setHovered] = useState(false);

@@ -1,16 +1,15 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import Task1 from "./components/Task1";
+import Task2 from "./components/Task2";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-  <div className='bg-amber-400'>
-     <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  </div>
-  )
+   <>
+    <Task2/>
+   </>
+  );
 }
 
-export default App
+export default App;

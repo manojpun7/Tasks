@@ -9,7 +9,7 @@ import emoji2 from "../assets/emoji2.gif";
 import emoji3 from "../assets/emoji3.gif";
 import emoji4 from "../assets/emoji4.gif";
 
-const Task2 = () => {
+const ComponentA = () => {
   return (
     // Outermost div
     <div
@@ -113,4 +113,4 @@ const Task2 = () => {
   );
 };
 
-export default Task2;
+export default ComponentA;

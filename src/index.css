@@ -1,13 +1,13 @@
 @import "tailwindcss";
 @keyframes smooth-up-down {
   0%, 100% {
-    transform: translateY(0); /* Start and end at original position */
+    transform: translateY(0); 
   }
   50% {
-    transform: translateY(-20px); /* Move 10px up at the midpoint */
+    transform: translateY(-20px); 
   }
 }
 
 .animate-smooth-up-down {
-  animation: smooth-up-down 3s ease-in-out infinite; /* 2 seconds duration, smooth timing, infinite loop */
+  animation: smooth-up-down 2s ease-in-out infinite; 
 }

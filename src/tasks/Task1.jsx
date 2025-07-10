@@ -10,7 +10,7 @@ import emoji2 from "../assets/emoji2.gif";
 import emoji3 from "../assets/emoji3.gif";
 import emoji4 from "../assets/emoji4.gif";
 
-const Test = () => {
+const Task1 = () => {
   const [hovered, setHovered] = useState(false);
 
   const images = [
@@ -167,4 +167,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default Task1;

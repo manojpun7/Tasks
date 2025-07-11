@@ -27,3 +27,21 @@
 html {
   scroll-behavior: smooth;
 }
+@keyframes blink2s {
+  0%, 49.9% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+.animate-blink2s-user1 {
+  animation: blink2s 4s infinite ease-in-out;
+  animation-delay: 0s;
+}
+
+.animate-blink2s-user6 {
+  animation: blink2s 4s infinite ease-in-out;
+  animation-delay: 2s; /* offset by 2 seconds */
+}

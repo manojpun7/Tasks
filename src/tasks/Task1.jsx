@@ -12,6 +12,7 @@ import emoji3 from "../assets/task1/emoji3.gif";
 import emoji4 from "../assets/task1/emoji4.gif";
 import rating from "../assets/task1/rating.png";
 import TestimonialCard from "../components/task1/TestimonialCard";
+import previewVideo from "../assets/task1/video.mp4";
 
 const Task1 = () => {
   const [mainHovered, setMainHovered] = useState(false);
@@ -127,34 +128,64 @@ const Task1 = () => {
       >
         <div className="absolute top-[178px] left-[292px] w-[630px] h-[341px] opacity-100">
           {images.map((image) => (
-            <img
-              key={image.id}
-              src={image.src}
-              alt={image.alt}
-              onMouseEnter={() => {
-                if (mainHovered && image.id === "user1") {
-                  setHoveredId("user1");
+            <div key={image.id}>
+              <img
+                src={image.src}
+                alt={image.alt}
+                onMouseEnter={() => {
+                  if (
+                    mainHovered &&
+                    (image.id === "user1" || image.id === "user6")
+                  ) {
+                    setHoveredId(image.id);
+                  }
+                }}
+                onMouseLeave={() => {
+                  if (image.id === "user1" || image.id === "user6") {
+                    setHoveredId(null);
+                  }
+                }}
+                className={`absolute w-[96px] h-[97px] rounded-[32px] transition-all duration-700 ease-in-out 
+        ${mainHovered ? image.posB : image.posA} 
+        ${mainHovered && image.isPng ? "animate-smooth-up-down" : ""}`}
+                style={
+                  mainHovered && image.isPng
+                    ? { animationDelay: image.animationDelay }
+                    : {}
                 }
-              }}
-              onMouseLeave={() => {
-                if (image.id === "user1") {
-                  setHoveredId(null);
-                }
-              }}
-              className={`absolute w-[96px] h-[97px] rounded-[32px] transition-all duration-700 ease-in-out 
-                ${mainHovered ? image.posB : image.posA} 
-                ${mainHovered && image.isPng ? "animate-smooth-up-down" : ""}`}
-              style={
-                mainHovered && image.isPng
-                  ? { animationDelay: image.animationDelay }
-                  : {}
-              }
-            />
+              />
+              <img
+  src={rating}
+  alt="Rating for User1"
+  className={`absolute w-[70px] h-auto z-40 transition-all duration-700 ease-in-out animate-blink2s-user1
+    ${mainHovered ? "top-[-120px] left-[-5px]" : "top-[25px] left-[200px]"}`}
+/>
+
+<img
+  src={rating}
+  alt="Rating for User6"
+  className={`absolute w-[70px] h-auto z-40 transition-all duration-700 ease-in-out animate-blink2s-user6
+    ${mainHovered ? "bottom-[-100px] right-[0px]" : "bottom-[20px] right-[70px]"}`}
+/>
+
+            </div>
           ))}
 
           {mainHovered && hoveredId === "user1" && (
             <div className="absolute top-[-40px] left-[-90px] z-50">
               <TestimonialCard />
+            </div>
+          )}
+
+          {mainHovered && hoveredId === "user6" && (
+            <div className="absolute bottom-[-10px] right-[-25px] z-50 w-[250px] h-[300px] rounded-lg overflow-hidden shadow-lg">
+              <video
+                src={previewVideo}
+                autoPlay
+                muted
+                loop
+                className="w-full h-full object-cover"
+              />
             </div>
           )}
 

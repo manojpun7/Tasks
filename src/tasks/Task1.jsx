@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import user1 from "../assets/task1/user1.png";
 import user2 from "../assets/task1/user2.png";
 import user3 from "../assets/task1/user3.png";
@@ -9,9 +10,12 @@ import emoji1 from "../assets/task1/emoji1.gif";
 import emoji2 from "../assets/task1/emoji2.gif";
 import emoji3 from "../assets/task1/emoji3.gif";
 import emoji4 from "../assets/task1/emoji4.gif";
+import rating from "../assets/task1/rating.png";
+import TestimonialCard from "../components/task1/TestimonialCard";
 
 const Task1 = () => {
-  const [hovered, setHovered] = useState(false);
+  const [mainHovered, setMainHovered] = useState(false);
+  const [hoveredId, setHoveredId] = useState(null);
 
   const images = [
     {
@@ -21,7 +25,7 @@ const Task1 = () => {
       posA: "top-[10px] left-[120px]",
       posB: "top-[-120px] left-[-90px]",
       isPng: true,
-      animationDelay: "0s", 
+      animationDelay: "0s",
     },
     {
       id: "user2",
@@ -30,7 +34,7 @@ const Task1 = () => {
       posA: "top-[10px] right-[120px]",
       posB: "top-[-130px] right-[-90px]",
       isPng: true,
-      animationDelay: "0.8s", 
+      animationDelay: "0.8s",
     },
     {
       id: "user3",
@@ -39,7 +43,7 @@ const Task1 = () => {
       posA: "top-[100px] right-[0px]",
       posB: "top-[100px] right-[-150px]",
       isPng: true,
-      animationDelay: "0.4s", 
+      animationDelay: "0.4s",
     },
     {
       id: "user4",
@@ -48,7 +52,7 @@ const Task1 = () => {
       posA: "top-[100px] left-[10px]",
       posB: "top-[100px] left-[-200px]",
       isPng: true,
-      animationDelay: "0.6s", 
+      animationDelay: "0.6s",
     },
     {
       id: "user5",
@@ -57,7 +61,7 @@ const Task1 = () => {
       posA: "top-[244px] left-[128px]",
       posB: "top-[370px] left-[50px]",
       isPng: true,
-      animationDelay: "1s", 
+      animationDelay: "1s",
     },
     {
       id: "user6",
@@ -75,7 +79,7 @@ const Task1 = () => {
       posA: "top-[213px] left-[10px]",
       posB: "top-[300px] left-[-120px]",
       isPng: false,
-      animationDelay: "0s", 
+      animationDelay: "0s",
     },
     {
       id: "emoji2",
@@ -107,50 +111,62 @@ const Task1 = () => {
   ];
 
   return (
-    // Outermost div
     <div
       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
                  w-[1214px] h-[697px] opacity-100
                  overflow-hidden cursor-pointer"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => setMainHovered(true)}
+      onMouseLeave={() => {
+        setMainHovered(false);
+        setHoveredId(null);
+      }}
     >
-      {/* Main content container  */}
       <div
         className="relative w-[1214px] h-[697px] overflow-hidden rounded-lg
                    bg-white flex items-center justify-center"
       >
-        {/* Inner container  */}
         <div className="absolute top-[178px] left-[292px] w-[630px] h-[341px] opacity-100">
           {images.map((image) => (
             <img
               key={image.id}
               src={image.src}
               alt={image.alt}
-              className={`absolute w-[96px] h-[97px] rounded-[32px] transition-all duration-700 ease-in-out ${
-                hovered ? image.posB : image.posA
-              } ${hovered && image.isPng ? 'animate-smooth-up-down' : ''}`}
-              // Dynamically apply animation-delay using style prop
-              style={hovered && image.isPng ? { animationDelay: image.animationDelay } : {}}
+              onMouseEnter={() => {
+                if (mainHovered && image.id === "user1") {
+                  setHoveredId("user1");
+                }
+              }}
+              onMouseLeave={() => {
+                if (image.id === "user1") {
+                  setHoveredId(null);
+                }
+              }}
+              className={`absolute w-[96px] h-[97px] rounded-[32px] transition-all duration-700 ease-in-out 
+                ${mainHovered ? image.posB : image.posA} 
+                ${mainHovered && image.isPng ? "animate-smooth-up-down" : ""}`}
+              style={
+                mainHovered && image.isPng
+                  ? { animationDelay: image.animationDelay }
+                  : {}
+              }
             />
           ))}
 
-          {/* Main textual content container  */}
+          {mainHovered && hoveredId === "user1" && (
+            <div className="absolute top-[-40px] left-[-90px] z-50">
+              <TestimonialCard />
+            </div>
+          )}
+
           <div
             className="flex flex-col items-center justify-center p-5 gap-[20px]
-                           w-[399px] h-[131px] absolute top-[114px] left-[120px]"
+                       w-[399px] h-[131px] absolute top-[114px] left-[120px]"
           >
-            <p
-              className="text-gray-700 opacity-100 w-[399px] h-[30px]
-                             font-normal text-[24px] leading-[100%] tracking-[0%]"
-            >
+            <p className="text-gray-700 w-[399px] h-[30px] font-normal text-[24px] leading-[100%] tracking-[0%]">
               Hear How They Level Up Their Game!
             </p>
 
-            <h2
-              className="flex items-center justify-center w-[336px] h-[38px] gap-[4px]
-                             font-bold text-3xl whitespace-nowrap"
-            >
+            <h2 className="flex items-center justify-center w-[336px] h-[38px] gap-[4px] font-bold text-3xl whitespace-nowrap">
               <span>Skill</span>
               <span className="text-green-500">Masters</span>
               <span>Unite!</span>

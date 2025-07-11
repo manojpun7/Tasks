@@ -15,7 +15,6 @@ const SkillShikshyaFeatures = () => {
       className="mx-auto p-25 grid grid-cols-1 md:grid-cols-2 gap-8"
       style={{ width: '70vw', height: '90vh' }}
     >
-      {/* First card hover */}
       <div 
         onMouseEnter={() => setIsHoveredFirst(true)}
         onMouseLeave={() => setIsHoveredFirst(false)}
@@ -24,7 +23,6 @@ const SkillShikshyaFeatures = () => {
         {isHoveredFirst ? <ZeroIndexCard /> : <FirstCard />}
       </div>
 
-      {/* Second card hover */}
       <div
         onMouseEnter={() => setIsHoveredSecond(true)}
         onMouseLeave={() => setIsHoveredSecond(false)}

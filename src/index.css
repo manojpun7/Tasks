@@ -24,3 +24,6 @@
 .animate-task2-animation {
   animation: task2-animation 1s ease-in-out infinite; 
 }
+html {
+  scroll-behavior: smooth;
+}

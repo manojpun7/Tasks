@@ -13,17 +13,14 @@ const ZeroIndexCard = () => {
         className="relative bottom-0 left-0 w-[350px] h-full object-cover object-bottom"
       />
 
-      {/* Top Right Text */}
       <div className="absolute top-8 right-8 text-white text-2xl font-semibold w-1/3 text-center z-10">
         Clarity unlocked— stickers, sips, and skills all in one go!
       </div>
 
-      {/* Left Arrow Button */}
       <button className="absolute left-1 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-md z-20">
         <img src={arrowLeft} alt="Previous" className="w-6 h-6" />
       </button>
 
-      {/* Right Arrow Button */}
       <button className="absolute right-1 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-md z-20">
         <img src={arrowRight} alt="Next" className="w-6 h-6" />
       </button>

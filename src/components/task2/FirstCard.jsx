@@ -12,10 +12,10 @@ const FirstCard = () => {
       <div
         style={{
           position: "absolute",
-          width: "257.39px",
-          height: "338.59px",
-          top: "15px",
-          left: "-100px",
+          width: "235px",
+          height: "400px",
+          top: "0px",
+          left: "-125px",
           zIndex: 10,
         }}
         className={`${animationClass}`}

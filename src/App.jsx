@@ -5,8 +5,8 @@ const App = () => {
   return (
     <div>
       <div className="h-[80vh] flex flex-col items-center px-6 py-4">
-        <h1 className="text-3xl font-bold text-indigo-600 mb-0 text-center">
-          note: this is Task 1 !!, Please scroll for Task 2 !!
+        <h1 className="text-3xl font-bold text-red-600 mb-0 text-center">
+          Note : This is Task 1 !!, Please scroll for Task 2 !!
         </h1>
         <Task1 />
       </div>
@@ -19,7 +19,7 @@ const App = () => {
         <h1 className="text-3xl font-bold text-orange-500 mb-4 text-center">
           Task 2 !!
         </h1>
-        {/* <Task2 /> */}
+        <Task2 />
       </div>
     </div>
   );

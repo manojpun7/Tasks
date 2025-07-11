@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import FirstCard from './FirstCard';
 import SecondCard from './SecondCard';
 import ThirdCard from './ThirdCard';
@@ -12,25 +13,29 @@ const SkillShikshyaFeatures = () => {
 
   return (
     <div
-      className="mx-auto p-25 grid grid-cols-1 md:grid-cols-2 gap-8"
+      className="mx-auto p-20 grid grid-cols-1 md:grid-cols-2 gap-8"
       style={{ width: '70vw', height: '90vh' }}
     >
-      <div 
+      <motion.div
         onMouseEnter={() => setIsHoveredFirst(true)}
         onMouseLeave={() => setIsHoveredFirst(false)}
         className="cursor-pointer"
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       >
         {isHoveredFirst ? <ZeroIndexCard /> : <FirstCard />}
-      </div>
+      </motion.div>
 
-      <div
+      <motion.div
         onMouseEnter={() => setIsHoveredSecond(true)}
         onMouseLeave={() => setIsHoveredSecond(false)}
         className="cursor-pointer"
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       >
         {isHoveredSecond ? <OneIndexCard /> : <SecondCard />}
-      </div>
-
+      </motion.div>
+      
       <ThirdCard />
       <FourthCard />
     </div>

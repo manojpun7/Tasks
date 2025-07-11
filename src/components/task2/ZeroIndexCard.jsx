@@ -1,7 +1,6 @@
 
 
-// Import your assets (adjust paths as necessary)
-import personWithLaptop from '../../assets/task2/man.png'; // Make sure you have this image
+import personWithLaptop from '../../assets/task2/man.png'; 
 import arrowLeft from '../../assets/task2/left.svg';
 import arrowRight from '../../assets/task2/right.svg';
 const ZeroIndexCard = () => {
@@ -11,7 +10,7 @@ const ZeroIndexCard = () => {
       <img
         src={personWithLaptop}
         alt="Person working on a laptop"
-        className="absolute bottom-0 left-0 w-[350px] h-[330px] object-cover object-bottom"
+        className="relative bottom-0 left-0 w-[350px] h-full object-cover object-bottom"
       />
 
       {/* Top Right Text */}

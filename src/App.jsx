@@ -18,7 +18,7 @@ const App = () => {
       <div className="flex flex-col items-center px-6 py-0">
         <h1 className="text-3xl font-bold text-orange-500 mb-4 text-center">
           Task 2 !! Task 2 !! Task 2 !!{" "}
-          <br>please wait for moment since image might take time loading</br>
+          please wait for moment since image might take time loading
         </h1>
         <Task2 />
       </div>
